@@ -1,6 +1,8 @@
+"use client";
+
 import { useState } from "react";
 import { ArrowUpRight, Compass, Sparkles, Users2, MessageSquareText, Flame } from "lucide-react";
-import { Link } from "@tanstack/react-router";
+import Link from "next/link";
 import { ArchitecturalScene3D } from "@/components/three/ArchitecturalScene3D";
 import { RevealText } from "@/components/animation/RevealText";
 
@@ -136,7 +138,7 @@ export function ArchitecturalCultureSection() {
             <div className="flex items-center gap-3">
               <span className="text-xs text-[#AAA6A2] font-mono">{current.metric} / 05</span>
               <Link
-                to={current.link as string}
+                href={current.link}
                 className="inline-flex items-center gap-1.5 rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-xs text-white hover:border-clout-red hover:bg-clout-red transition-all"
               >
                 <span>Explore Practice</span>
@@ -219,7 +221,7 @@ export function ArchitecturalCultureSection() {
             </div>
 
             <Link
-              to={current.link as string}
+              href={current.link}
               className="inline-flex items-center gap-2 rounded-full border border-clout-red bg-clout-red px-6 py-2.5 text-xs font-medium uppercase tracking-wider text-white hover:bg-transparent hover:text-clout-red transition-all shrink-0"
             >
               <span>View {current.name} Practice ↗</span>

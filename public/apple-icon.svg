@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <radialGradient id="cloutGlowApple" cx="72%" cy="28%" r="45%">
+      <stop offset="0%" stop-color="#FF5A1F" stop-opacity="0.8"/>
+      <stop offset="35%" stop-color="#E50920" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#E50920" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="ivoryGradApple" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#F4F0E9"/>
+    </linearGradient>
+    <linearGradient id="redAccentApple" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F32735"/>
+      <stop offset="100%" stop-color="#A90012"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="512" height="512" rx="112" fill="#050505" stroke="#292424" stroke-width="12"/>
+  <circle cx="360" cy="150" r="140" fill="url(#cloutGlowApple)"/>
+
+  <g transform="translate(64, 96)">
+    <path d="M 148 40 C 65 40 10 100 10 160 C 10 220 65 280 148 280 C 185 280 215 264 235 242 L 205 210 C 190 226 170 236 148 236 C 95 236 56 195 56 160 C 56 125 95 84 148 84 C 170 84 190 94 205 110 L 235 78 C 215 56 185 40 148 40 Z" fill="url(#ivoryGradApple)"/>
+    <path d="M 292 42 L 222 280 L 268 280 L 285 220 L 345 220 L 362 280 L 408 280 L 338 42 L 292 42 Z M 315 116 L 336 182 L 294 182 L 315 116 Z" fill="url(#ivoryGradApple)"/>
+  </g>
+
+  <circle cx="410" cy="102" r="26" fill="url(#redAccentApple)"/>
+  <circle cx="410" cy="102" r="12" fill="#FFFFFF" opacity="0.9"/>
+</svg>

@@ -1,0 +1,238 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-sans:
+    var(--font-manrope), "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-display: var(--font-manrope), -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-serif: var(--font-instrument-serif), "Instrument Serif", Georgia, serif;
+  --font-body: var(--font-dm-sans), "DM Sans", "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+
+  --color-clout-bg: #050505;
+  --color-clout-soft-bg: #0a0a0a;
+  --color-clout-charcoal: #151515;
+  --color-clout-deep-red: #a90012;
+  --color-clout-red: #e50920;
+  --color-clout-bright-red: #f32735;
+  --color-clout-orange: #ff5a1f;
+  --color-clout-white: #f4f0e9;
+  --color-clout-muted: #aaa6a2;
+  --color-clout-border: #292424;
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+}
+
+:root {
+  --font-manrope: "Manrope", sans-serif;
+  --font-dm-sans: "DM Sans", sans-serif;
+  --font-instrument-serif: "Instrument Serif", Georgia, serif;
+  --radius: 0.75rem;
+  --background: #050505;
+  --foreground: #f4f0e9;
+  --card: #0a0a0a;
+  --card-foreground: #f4f0e9;
+  --popover: #0a0a0a;
+  --popover-foreground: #f4f0e9;
+  --primary: #e50920;
+  --primary-foreground: #ffffff;
+  --secondary: #151515;
+  --secondary-foreground: #f4f0e9;
+  --muted: #aaa6a2;
+  --muted-foreground: #827e7b;
+  --accent: #e50920;
+  --accent-foreground: #ffffff;
+  --destructive: #f32735;
+  --destructive-foreground: #ffffff;
+  --border: #292424;
+  --input: #292424;
+  --ring: #e50920;
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  body {
+    background-color: #050505;
+    color: #f4f0e9;
+    letter-spacing: -0.01em;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  .font-display {
+    letter-spacing: -0.03em;
+    font-weight: 300;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    background: #050505;
+  }
+
+  ::selection {
+    background: #e50920;
+    color: #ffffff;
+  }
+}
+
+/* Editorial Serif Accent */
+.font-serif-italic {
+  font-family: var(--font-instrument-serif), "Instrument Serif", Georgia, serif !important;
+  font-style: italic !important;
+  font-weight: 400 !important;
+  letter-spacing: 0em;
+}
+
+/* Page Container */
+.page-shell {
+  width: min(100% - 40px, 1360px);
+  margin-inline: auto;
+}
+
+@media (min-width: 768px) {
+  .page-shell {
+    width: min(100% - 80px, 1360px);
+  }
+}
+
+/* Reference 02 — Red Architectural Environment & Reflections */
+.red-architectural-scene {
+  background: radial-gradient(
+    ellipse 90% 65% at 50% 25%,
+    #e50920 0%,
+    #a90012 35%,
+    #300007 70%,
+    #050505 100%
+  );
+}
+
+.red-vertical-column {
+  background: linear-gradient(
+    180deg,
+    rgba(229, 9, 32, 0.9) 0%,
+    rgba(169, 0, 18, 0.4) 60%,
+    rgba(5, 5, 5, 0.95) 100%
+  );
+}
+
+.dark-architectural-panel {
+  background: #0a0a0a;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow:
+    0 40px 100px -20px rgba(0, 0, 0, 0.9),
+    0 0 80px -10px rgba(169, 0, 18, 0.15);
+}
+
+.mirror-floor-gradient {
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(229, 9, 32, 0.05) 40%,
+    rgba(5, 5, 5, 0.95) 100%
+  );
+}
+
+/* Warm Orange-Red Photographic Glow */
+.warm-photo-glow {
+  background: radial-gradient(
+    circle at 60% 40%,
+    rgba(255, 90, 31, 0.15) 0%,
+    rgba(229, 9, 32, 0.12) 35%,
+    transparent 70%
+  );
+}
+
+/* Subtle Film Grain Noise Texture */
+.noise-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 99;
+  pointer-events: none;
+  opacity: 0.025;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+/* Infinite Marquee - Restrained & Elegant */
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 35s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Gentle ambient pulse */
+@keyframes subtleAura {
+  0%,
+  100% {
+    opacity: 0.35;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.55;
+    transform: scale(1.04);
+  }
+}
+
+.animate-subtle-aura {
+  animation: subtleAura 8s ease-in-out infinite;
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

@@ -1,4 +1,4 @@
-import { Link } from "@tanstack/react-router";
+import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import type { ReactNode } from "react";
 
@@ -34,7 +34,7 @@ export function PageHeader({
         {backHref && (
           <div className="mb-8">
             <Link
-              to={backHref as string}
+              href={backHref}
               className="inline-flex items-center gap-2 text-xs font-mono tracking-widest text-[#AAA6A2] hover:text-white transition-colors duration-200 group"
             >
               <ArrowLeft className="h-3.5 w-3.5 transition-transform duration-200 group-hover:-translate-x-1 text-clout-red" />

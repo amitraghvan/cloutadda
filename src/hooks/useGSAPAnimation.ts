@@ -1,3 +1,5 @@
+"use client";
+
 import { useLayoutEffect, useEffect, useRef } from "react";
 import { gsap } from "@/lib/animations/gsap";
 

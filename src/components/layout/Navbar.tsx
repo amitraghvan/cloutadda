@@ -1,4 +1,7 @@
-import { Link, useRouterState } from "@tanstack/react-router";
+"use client";
+
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { ChevronDown, Menu, X, ArrowUpRight } from "lucide-react";
 import { useEffect, useState, useRef } from "react";
 import { CloutAddaLogo } from "./CloutAddaLogo";
@@ -12,8 +15,8 @@ export function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
-  const routerState = useRouterState();
-  const currentPath = routerState.location.pathname;
+  const pathname = usePathname();
+  const currentPath = pathname || "/";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -54,7 +57,7 @@ export function Navbar() {
         {/* Center Desktop Navigation */}
         <nav className="hidden items-center gap-9 md:flex" aria-label="Main Navigation">
           <Link
-            to="/"
+            href="/"
             className={`text-[13px] font-normal tracking-wide transition-colors duration-200 hover:text-[#F4F0E9] ${
               currentPath === "/" ? "text-[#F4F0E9] font-medium" : "text-[#AAA6A2]"
             }`}
@@ -63,7 +66,7 @@ export function Navbar() {
           </Link>
 
           <Link
-            to="/about"
+            href="/about"
             className={`text-[13px] font-normal tracking-wide transition-colors duration-200 hover:text-[#F4F0E9] ${
               currentPath === "/about" ? "text-[#F4F0E9] font-medium" : "text-[#AAA6A2]"
             }`}
@@ -101,7 +104,7 @@ export function Navbar() {
                     Agency Practices
                   </span>
                   <Link
-                    to="/services"
+                    href="/services"
                     className="text-[11px] text-[#AAA6A2] hover:text-[#F4F0E9] transition-colors"
                   >
                     Overview →
@@ -111,7 +114,7 @@ export function Navbar() {
                   {SERVICES_LIST.map((srv) => (
                     <Link
                       key={srv.id}
-                      to={`/services/${srv.slug}` as string}
+                      href={`/services/${srv.slug}`}
                       className={`group flex items-start gap-3 rounded-xl p-2.5 transition-colors hover:bg-white/[0.04] ${
                         currentPath === `/services/${srv.slug}`
                           ? "bg-white/[0.04] border-l-2 border-clout-red"
@@ -138,7 +141,7 @@ export function Navbar() {
           </div>
 
           <Link
-            to="/work"
+            href="/work"
             className={`text-[13px] font-normal tracking-wide transition-colors duration-200 hover:text-[#F4F0E9] ${
               currentPath.startsWith("/work") ? "text-[#F4F0E9] font-medium" : "text-[#AAA6A2]"
             }`}
@@ -147,7 +150,7 @@ export function Navbar() {
           </Link>
 
           <Link
-            to="/contact"
+            href="/contact"
             className={`text-[13px] font-normal tracking-wide transition-colors duration-200 hover:text-[#F4F0E9] ${
               currentPath === "/contact" ? "text-[#F4F0E9] font-medium" : "text-[#AAA6A2]"
             }`}
@@ -160,7 +163,7 @@ export function Navbar() {
         <div className="hidden items-center gap-4 md:flex">
           <MagneticButton strength={0.22}>
             <Link
-              to="/contact"
+              href="/contact"
               className="group relative inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.03] px-5 py-2 text-xs font-mono tracking-wider text-[#F4F0E9] backdrop-blur-sm transition-all duration-300 hover:border-clout-red hover:bg-clout-red hover:text-white hover:shadow-[0_0_25px_rgba(229,9,32,0.3)]"
             >
               <span>LET'S TALK</span>
@@ -184,7 +187,7 @@ export function Navbar() {
         <div className="fixed inset-x-0 top-[60px] bottom-0 z-40 flex flex-col justify-between border-t border-white/10 bg-[#050505]/98 px-6 py-8 backdrop-blur-3xl md:hidden overflow-y-auto animate-in slide-in-from-top-4 duration-300">
           <div className="space-y-6">
             <Link
-              to="/"
+              href="/"
               className={`block font-display text-2xl tracking-tight ${
                 currentPath === "/" ? "text-clout-red font-medium" : "text-[#F4F0E9] font-light"
               }`}
@@ -193,7 +196,7 @@ export function Navbar() {
             </Link>
 
             <Link
-              to="/about"
+              href="/about"
               className={`block font-display text-2xl tracking-tight ${
                 currentPath === "/about"
                   ? "text-clout-red font-medium"
@@ -205,7 +208,7 @@ export function Navbar() {
 
             <div className="space-y-3 pt-2">
               <Link
-                to="/services"
+                href="/services"
                 className="text-xs uppercase font-mono tracking-widest text-clout-red block"
               >
                 Services Overview →
@@ -214,7 +217,7 @@ export function Navbar() {
                 {SERVICES_LIST.map((srv) => (
                   <Link
                     key={srv.id}
-                    to={`/services/${srv.slug}` as string}
+                    href={`/services/${srv.slug}`}
                     className="flex items-center gap-3 text-sm text-[#AAA6A2] hover:text-white"
                   >
                     <span className="font-mono text-xs text-clout-red">{srv.number}</span>
@@ -225,7 +228,7 @@ export function Navbar() {
             </div>
 
             <Link
-              to="/work"
+              href="/work"
               className={`block font-display text-2xl tracking-tight ${
                 currentPath.startsWith("/work")
                   ? "text-clout-red font-medium"
@@ -236,7 +239,7 @@ export function Navbar() {
             </Link>
 
             <Link
-              to="/contact"
+              href="/contact"
               className={`block font-display text-2xl tracking-tight ${
                 currentPath === "/contact"
                   ? "text-clout-red font-medium"
@@ -249,7 +252,7 @@ export function Navbar() {
 
           <div className="pt-8 border-t border-white/10">
             <Link
-              to="/contact"
+              href="/contact"
               className="flex w-full items-center justify-center gap-2 rounded-full bg-clout-red py-3.5 text-center font-mono text-xs uppercase tracking-wider text-white"
             >
               <span>LET'S TALK ↗</span>

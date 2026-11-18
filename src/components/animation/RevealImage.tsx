@@ -1,3 +1,5 @@
+"use client";
+
 import { useRef, useEffect, type ReactNode } from "react";
 import { gsap } from "@/lib/animations/gsap";
 import { useReducedMotion } from "@/hooks/useReducedMotion";

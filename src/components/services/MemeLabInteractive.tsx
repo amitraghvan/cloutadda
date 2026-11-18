@@ -1,3 +1,5 @@
+"use client";
+
 import { useState } from "react";
 import { Sparkles, Wand2 } from "lucide-react";
 import { getMemeLabCreativeIdea } from "@/data/memesData";

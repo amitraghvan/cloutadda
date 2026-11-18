@@ -1,4 +1,4 @@
-import { Link } from "@tanstack/react-router";
+import Link from "next/link";
 import { ArrowUpRight, Mail, Phone } from "lucide-react";
 import { CloutAddaLogo } from "./CloutAddaLogo";
 import { COMPANY_INFO } from "@/data/companyData";
@@ -32,7 +32,7 @@ export function Footer() {
           </div>
           <div>
             <Link
-              to="/contact"
+              href="/contact"
               className="inline-flex items-center gap-2.5 rounded-full border border-clout-red bg-clout-red px-8 py-3.5 text-xs font-semibold uppercase tracking-wider text-white shadow-[0_0_25px_rgba(229,9,32,0.3)] transition-all duration-300 hover:bg-transparent hover:text-clout-red"
             >
               <span>START A CONVERSATION</span>
@@ -97,7 +97,7 @@ export function Footer() {
               {SERVICES_LIST.map((srv) => (
                 <li key={srv.id}>
                   <Link
-                    to={`/services/${srv.slug}` as string}
+                    href={`/services/${srv.slug}`}
                     className="hover:text-white transition-colors flex items-center justify-between group"
                   >
                     <span>{srv.title}</span>
@@ -108,7 +108,7 @@ export function Footer() {
                 </li>
               ))}
               <li className="pt-2">
-                <Link to="/services" className="text-xs font-normal text-clout-red hover:underline">
+                <Link href="/services" className="text-xs font-normal text-clout-red hover:underline">
                   Services Matrix →
                 </Link>
               </li>
@@ -124,7 +124,7 @@ export function Footer() {
               {PORTFOLIO_LIST.map((proj) => (
                 <li key={proj.id}>
                   <Link
-                    to={`/work/${proj.slug}` as string}
+                    href={`/work/${proj.slug}`}
                     className="hover:text-white transition-colors block truncate"
                   >
                     {proj.title}
@@ -132,7 +132,7 @@ export function Footer() {
                 </li>
               ))}
               <li className="pt-2">
-                <Link to="/work" className="text-xs font-normal text-clout-red hover:underline">
+                <Link href="/work" className="text-xs font-normal text-clout-red hover:underline">
                   All Case Studies →
                 </Link>
               </li>
@@ -146,27 +146,27 @@ export function Footer() {
             </h4>
             <ul className="space-y-2.5 text-xs text-[#AAA6A2] font-light">
               <li>
-                <Link to="/" className="hover:text-white transition-colors">
+                <Link href="/" className="hover:text-white transition-colors">
                   Home
                 </Link>
               </li>
               <li>
-                <Link to="/about" className="hover:text-white transition-colors">
+                <Link href="/about" className="hover:text-white transition-colors">
                   About Clout Adda
                 </Link>
               </li>
               <li>
-                <Link to="/services" className="hover:text-white transition-colors">
+                <Link href="/services" className="hover:text-white transition-colors">
                   All Capabilities
                 </Link>
               </li>
               <li>
-                <Link to="/work" className="hover:text-white transition-colors">
+                <Link href="/work" className="hover:text-white transition-colors">
                   Work & Case Studies
                 </Link>
               </li>
               <li>
-                <Link to="/contact" className="hover:text-white transition-colors">
+                <Link href="/contact" className="hover:text-white transition-colors">
                   Start an Engagement
                 </Link>
               </li>

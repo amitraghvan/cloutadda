@@ -1,3 +1,5 @@
+"use client";
+
 import { useState } from "react";
 import { RefreshCw, Copy, Check, Share2, Maximize2, X, Sparkles } from "lucide-react";
 import { CLOUT_MEMES, type MemeItem } from "@/data/memesData";

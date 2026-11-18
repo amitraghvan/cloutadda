@@ -1,4 +1,6 @@
-import { Link } from "@tanstack/react-router";
+"use client";
+
+import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { COMPANY_INFO } from "@/data/companyData";
 import { RevealText } from "@/components/animation/RevealText";
@@ -34,7 +36,7 @@ export function HomeCtaSection() {
         <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-5">
           <MagneticButton strength={0.3}>
             <Link
-              to="/contact"
+              href="/contact"
               className="group inline-flex items-center justify-center gap-2.5 rounded-full border border-clout-red bg-clout-red px-9 py-4 font-mono text-xs uppercase tracking-widest text-white shadow-[0_0_35px_rgba(229,9,32,0.4)] transition-all duration-300 hover:bg-white hover:text-black hover:shadow-[0_0_50px_rgba(229,9,32,0.7)]"
             >
               <span>Start a Conversation</span>

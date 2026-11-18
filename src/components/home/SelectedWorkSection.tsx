@@ -1,4 +1,6 @@
-import { Link } from "@tanstack/react-router";
+"use client";
+
+import Link from "next/link";
 import { ArrowUpRight, Calendar, MapPin, Users } from "lucide-react";
 import { PORTFOLIO_LIST } from "@/data/portfolioData";
 import { RevealText } from "@/components/animation/RevealText";
@@ -31,7 +33,7 @@ export function SelectedWorkSection() {
               Explore our documented activations, summits and entertainment productions.
             </p>
             <Link
-              to="/work"
+              href="/work"
               className="mt-3 inline-flex items-center gap-1.5 font-mono text-xs text-white hover:text-clout-red transition-colors"
             >
               <span>View Full Case Studies Archive</span>
@@ -130,7 +132,7 @@ export function SelectedWorkSection() {
                       <span className="text-[11px] font-mono text-[#827E7B]">0{idx + 1} / 05</span>
                       <MagneticButton strength={0.2}>
                         <Link
-                          to={`/work/${project.slug}` as string}
+                          href={`/work/${project.slug}`}
                           className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-5 py-2 font-mono text-xs uppercase tracking-wider text-white hover:border-clout-red hover:bg-clout-red transition-all"
                         >
                           <span>View Story</span>

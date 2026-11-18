@@ -1,3 +1,5 @@
+"use client";
+
 import { useState } from "react";
 import { SOCIAL_CONTENT_FORMATS } from "@/data/servicesData";
 

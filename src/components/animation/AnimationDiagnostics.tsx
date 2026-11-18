@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect, useState } from "react";
 import { ScrollTrigger } from "@/lib/animations/gsap";
 
@@ -8,7 +10,7 @@ import { ScrollTrigger } from "@/lib/animations/gsap";
  * - Completely stripped / returns null in production builds.
  */
 export function AnimationDiagnostics() {
-  const isDev = import.meta.env.DEV;
+  const isDev = process.env.NODE_ENV !== "production";
   const [triggerCount, setTriggerCount] = useState(0);
   const [isOpen, setIsOpen] = useState(false);
 

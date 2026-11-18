@@ -1,4 +1,6 @@
-import { Link } from "@tanstack/react-router";
+"use client";
+
+import Link from "next/link";
 import { ArrowUpRight, CheckCircle2 } from "lucide-react";
 import { CREATORS_LIST } from "@/data/creatorsData";
 import { RevealText } from "@/components/animation/RevealText";
@@ -28,7 +30,7 @@ export function CreatorShowcaseSection() {
               your brand, audience and message with uncompromising authenticity.
             </p>
             <Link
-              to="/services/influencer-marketing"
+              href="/services/influencer-marketing"
               className="mt-3 inline-flex items-center gap-1.5 font-mono text-xs text-white hover:text-clout-red transition-colors"
             >
               <span>Explore Influencer Practice</span>

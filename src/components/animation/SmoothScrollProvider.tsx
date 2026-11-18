@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect, type ReactNode } from "react";
 import { gsap, ScrollTrigger } from "@/lib/animations/gsap";
 import { useReducedMotion } from "@/hooks/useReducedMotion";

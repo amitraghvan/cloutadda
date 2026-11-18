@@ -1,5 +1,7 @@
+"use client";
+
 import { useState } from "react";
-import { Link } from "@tanstack/react-router";
+import Link from "next/link";
 import { ArrowUpRight, CheckCircle2 } from "lucide-react";
 import { CLOUT_CHECK_OPTIONS, type ChallengeOption } from "@/data/cloutCheckData";
 import { RevealText } from "@/components/animation/RevealText";
@@ -112,7 +114,7 @@ export function CloutCheckSection() {
 
                 <MagneticButton strength={0.15} className="w-full">
                   <Link
-                    to={`/services/${selectedChallenge.serviceSlug}` as string}
+                    href={`/services/${selectedChallenge.serviceSlug}`}
                     className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-clout-red bg-clout-red py-3.5 font-mono text-xs uppercase tracking-wider text-white shadow-[0_0_25px_rgba(229,9,32,0.3)] transition-all duration-300 hover:bg-white hover:text-black"
                   >
                     <span>{selectedChallenge.actionText}</span>

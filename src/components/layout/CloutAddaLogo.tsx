@@ -1,9 +1,9 @@
-import { Link } from "@tanstack/react-router";
+import Link from "next/link";
 
 export function CloutAddaLogo({ className = "" }: { className?: string }) {
   return (
     <Link
-      to="/"
+      href="/"
       className={`group inline-flex items-center gap-3 transition-opacity duration-300 hover:opacity-85 ${className}`}
       aria-label="CLOUT ADDA Homepage"
     >

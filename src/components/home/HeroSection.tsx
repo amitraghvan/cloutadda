@@ -1,4 +1,6 @@
-import { Link } from "@tanstack/react-router";
+"use client";
+
+import Link from "next/link";
 import { ArrowUpRight, ArrowDown, Sparkles } from "lucide-react";
 import { useRef, useEffect } from "react";
 import { AtmosphericScene } from "@/components/three/AtmosphericScene";
@@ -152,7 +154,7 @@ export function HeroSection() {
             <div className="hero-cta-group pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
               <MagneticButton strength={0.28}>
                 <Link
-                  to="/contact"
+                  href="/contact"
                   className="group inline-flex items-center justify-center gap-2 rounded-full border border-clout-red bg-clout-red px-8 py-3.5 text-xs font-mono uppercase tracking-wider text-white shadow-[0_0_30px_rgba(229,9,32,0.35)] transition-all duration-300 hover:bg-white hover:border-white hover:text-black hover:shadow-[0_0_40px_rgba(229,9,32,0.6)]"
                 >
                   <span>Let's Talk</span>

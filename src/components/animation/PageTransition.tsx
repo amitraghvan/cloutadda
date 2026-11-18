@@ -1,5 +1,7 @@
+"use client";
+
 import { useEffect, useState, useRef, type ReactNode } from "react";
-import { useRouterState } from "@tanstack/react-router";
+import { usePathname } from "next/navigation";
 import { ScrollTrigger } from "@/lib/animations/gsap";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 
@@ -8,14 +10,14 @@ interface PageTransitionProps {
 }
 
 /**
- * Editorial page transition overlay for TanStack Router.
+ * Editorial page transition overlay for Next.js App Router.
  * Emits a subtle architectural wipe with brand red ambient sheen,
  * resets scroll position gracefully, and refreshes ScrollTrigger instances
  * without transforming the children DOM tree (preventing coordinate displacement).
  */
 export function PageTransition({ children }: PageTransitionProps) {
-  const routerState = useRouterState();
-  const currentPath = routerState.location.pathname;
+  const pathname = usePathname();
+  const currentPath = pathname || "/";
   const previousPathRef = useRef(currentPath);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const prefersReduced = useReducedMotion();

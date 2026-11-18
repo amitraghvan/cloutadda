@@ -1,4 +1,6 @@
-import { Link } from "@tanstack/react-router";
+"use client";
+
+import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { SERVICES_LIST } from "@/data/servicesData";
 import { RevealText } from "@/components/animation/RevealText";
@@ -46,7 +48,7 @@ export function ServicesOverviewSection() {
               conversations, or host stadium-scale experiences, we provide integrated execution.
             </p>
             <Link
-              to="/services"
+              href="/services"
               className="mt-3 inline-flex items-center gap-1.5 font-mono text-xs text-white hover:text-clout-red transition-colors"
             >
               <span>View Full Services Matrix</span>
@@ -114,7 +116,7 @@ export function ServicesOverviewSection() {
                       </span>
                       <MagneticButton strength={0.2}>
                         <Link
-                          to={`/services/${srv.slug}` as string}
+                          href={`/services/${srv.slug}`}
                           className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-6 py-2.5 font-mono text-xs uppercase tracking-wider text-white hover:border-clout-red hover:bg-clout-red transition-all"
                         >
                           <span>Explore Practice</span>

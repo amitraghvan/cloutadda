@@ -1,3 +1,5 @@
+"use client";
+
 import { useState } from "react";
 import { EVENT_TYPES } from "@/data/servicesData";
 
