@@ -91,31 +91,7 @@ export const CLOUT_MEMES: MemeItem[] = [
   },
 ];
 
-/* Interactive Meme Lab Combinations */
-export interface MemeLabPreset {
-  personality: string;
-  objective: string;
-  audience: string;
-  suggestedTone: string;
-  format: string;
-  sampleHeadline: string;
-  explanation: string;
-}
-
-export const MEME_LAB_DATA: Record<
-  string,
-  { suggestedTone: string; format: string; sampleHeadline: string; explanation: string }
-> = {
-  default: {
-    suggestedTone: "Sharp, self-aware & culturally grounded",
-    format: "Two-panel observational carousel + relatable Twitter-style visual card",
-    sampleHeadline:
-      "When the product solves the problem before your team can finish explaining the problem.",
-    explanation:
-      "This creative direction anchors the product's primary advantage in a familiar daily friction point, using humor to eliminate skepticism without compromising brand authority.",
-  },
-};
-
+/* Interactive Meme Lab Idea Generator */
 export function getMemeLabCreativeIdea(personality: string, objective: string, audience: string) {
   const tones: Record<string, string> = {
     "Funny & playful": "Unapologetically comedic, self-deprecating and fast-paced",

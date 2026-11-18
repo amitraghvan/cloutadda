@@ -1,4 +1,4 @@
-export interface ServiceItem {
+interface ServiceItem {
   id: string;
   slug: string;
   number: string;

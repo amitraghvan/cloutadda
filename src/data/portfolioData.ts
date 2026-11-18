@@ -1,4 +1,4 @@
-export interface CaseStudyItem {
+interface CaseStudyItem {
   id: string;
   slug: string;
   title: string;

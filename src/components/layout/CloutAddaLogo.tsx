@@ -1,10 +1,14 @@
 import Link from "next/link";
+import { cn } from "@/lib/utils";
 
 export function CloutAddaLogo({ className = "" }: { className?: string }) {
   return (
     <Link
       href="/"
-      className={`group inline-flex items-center gap-3 transition-opacity duration-300 hover:opacity-85 ${className}`}
+      className={cn(
+        "group inline-flex items-center gap-3 transition-opacity duration-300 hover:opacity-85",
+        className,
+      )}
       aria-label="CLOUT ADDA Homepage"
     >
       <div className="relative flex h-7 w-7 items-center justify-center rounded-sm bg-[#0E0E0E] border border-white/10 text-xs font-medium text-[#F4F0E9] group-hover:border-clout-red/50 transition-colors">

@@ -3,6 +3,7 @@
 import { useRef, type ReactNode, type MouseEvent } from "react";
 import { gsap } from "@/lib/animations/gsap";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
+import { cn } from "@/lib/utils";
 
 interface MagneticButtonProps {
   children: ReactNode;
@@ -59,7 +60,7 @@ export function MagneticButton({ children, className = "", strength = 0.25 }: Ma
       ref={ref}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      className={`inline-block will-change-transform ${className}`}
+      className={cn("inline-block will-change-transform", className)}
     >
       {children}
     </div>

@@ -1,4 +1,4 @@
-export interface CreatorProfile {
+interface CreatorProfile {
   id: string;
   name: string;
   category: string;

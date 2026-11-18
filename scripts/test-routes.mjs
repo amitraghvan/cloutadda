@@ -1,5 +1,6 @@
 // Automated Route & SSR Accessibility Verification Script
-const BASE_URL = "http://localhost:8082";
+const PORT = process.env.PORT || 3000;
+const BASE_URL = `http://127.0.0.1:${PORT}`;
 
 const ROUTES_TO_TEST = [
   { path: "/", expectedText: "moves fast" },

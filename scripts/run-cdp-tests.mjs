@@ -4,7 +4,8 @@ import path from "node:path";
 
 const CHROME_PATH = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome";
 const PORT = 9222;
-const BASE_URL = "http://localhost:8082";
+const APP_PORT = process.env.PORT || 3000;
+const BASE_URL = `http://127.0.0.1:${APP_PORT}`;
 const EVIDENCE_DIR = path.resolve(process.cwd(), "test-evidence");
 
 if (!fs.existsSync(EVIDENCE_DIR)) {

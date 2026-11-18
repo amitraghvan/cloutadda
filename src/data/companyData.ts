@@ -1,11 +1,11 @@
-export interface TeamContact {
+interface TeamContact {
   name: string;
   role: string;
   email: string;
   phone: string;
 }
 
-export interface MetricItem {
+interface MetricItem {
   value: string;
   label: string;
   description: string;

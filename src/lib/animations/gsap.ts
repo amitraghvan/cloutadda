@@ -20,4 +20,7 @@ if (typeof window !== "undefined") {
 }
 
 export { gsap, ScrollTrigger, useGSAP };
+export { GSAP_EASING, MOTION_TRANSITIONS } from "./easing";
+export { MOTION_TOKENS } from "./tokens";
+export { disposeThreeScene, cleanupScrollTriggers } from "./cleanup";
 export default gsap;

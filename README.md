@@ -1,5 +1,3 @@
-# cloutadda
-
 # CLOUT ADDA® — Official Creative Agency Website
 > **YOUR EXPERIENCE ELEVATED.**
 
@@ -14,25 +12,27 @@ Clout Adda is a culture-driven brand influence and experiences agency connecting
 
 ## 🛠️ Technology Stack & Architecture
 
-- **Framework**: TanStack Start / Vite / Nitro SSR
+- **Framework**: Next.js 15 (App Router, React 19, TypeScript)
 - **Animation Architecture**:
   - **GSAP 3** (`gsap`, `@gsap/react`, `ScrollTrigger`): Timelines, staggered text reveals, scroll-driven storytelling
   - **Three.js (WebGL)**: Ambient particle environments (`AtmosphericScene`), 3D monolithic structures (`ArchitecturalScene3D`)
   - **Framer Motion**: Spring micro-interactions & magnetic CTA controls
+  - **Lenis**: Hardware-accelerated smooth scrolling integrated with ScrollTrigger
   - **Performance**: Direct GPU transforms, 60–120fps hardware acceleration, full `prefers-reduced-motion` compliance
-- **Styling**: Tailwind CSS, custom Instrument Serif & Manrope typography, deep obsidian & signature red palette
+- **Styling**: Tailwind CSS v4, custom Instrument Serif & Manrope typography, deep obsidian & signature red palette
+- **SEO & Metadata**: Dynamic sitemap (`sitemap.ts`), robots directives (`robots.ts`), JSON-LD Organization schema, OpenGraph & Twitter tags
 
 ---
 
 ## 🚀 Getting Started
 
 ### Prerequisites
-- Node.js >= 18.0.0
-- npm / bun
+- Node.js >= 20.0.0
+- npm >= 10.0.0
 
 ### Installation
 ```bash
-npm install
+npm ci
 ```
 
 ### Development
@@ -40,17 +40,16 @@ npm install
 npm run dev
 ```
 
-### Production Build & Preview
+### Production Build & Start
 ```bash
 npm run build
-npm run preview
+npm run start
 ```
 
 ### Quality & Typechecks
 ```bash
-npx tsc --noEmit     # TypeScript typecheck
-npm run lint         # ESLint check
-npm run format       # Prettier code formatting
+npm run typecheck    # TypeScript typecheck (tsc --noEmit)
+npm run lint         # Next.js ESLint check
 ```
 
 ---
@@ -59,20 +58,33 @@ npm run format       # Prettier code formatting
 
 ```text
 cloutaddawebapp/
+├── public/                 # Static brand assets, favicon, manifest
+├── scripts/                # Automated route & Chrome DevTools test runners
 ├── src/
+│   ├── app/                # Next.js 15 App Router (All 15 routes + layouts)
+│   │   ├── about/          # /about
+│   │   ├── contact/        # /contact
+│   │   ├── services/       # /services + 5 practice sub-routes
+│   │   ├── work/           # /work + 5 case studies
+│   │   ├── globals.css     # Tailwind v4 theme & CSS tokens
+│   │   ├── layout.tsx      # Root server layout with SEO & metadata
+│   │   ├── robots.ts       # Dynamic robots.txt
+│   │   └── sitemap.ts      # Dynamic sitemap.xml
 │   ├── components/
 │   │   ├── animation/      # GSAP ScrollTrigger, counters, reveals, magnetic buttons
+│   │   ├── contact/        # ContactFormClient
 │   │   ├── home/           # Hero, Manifesto, Numbers, Architectural 3D, Meme Wall, Selected Work
-│   │   ├── layout/         # Navbar, Footer, PageHeader, Logo
+│   │   ├── layout/         # AppClientShell, Navbar, Footer, PageHeader, Logo
 │   │   ├── services/       # Interactive selectors, format tools, concept calculators
-│   │   ├── shared/         # Lightbox modal, common UI
-│   │   └── three/          # Three.js WebGL scenes (AtmosphericScene, ArchitecturalScene3D)
+│   │   ├── shared/         # Lightbox modal
+│   │   ├── three/          # Three.js WebGL scenes (AtmosphericScene, ArchitecturalScene3D)
+│   │   └── work/           # WorkArchiveClient + 5 Case Study view components
 │   ├── data/               # Company data, services matrix, portfolio case studies
-│   ├── hooks/              # useReducedMotion, useGSAPAnimation
-│   ├── lib/animations/     # Central GSAP registration, tokens, easing curves, cleanup
-│   └── routes/             # TanStack Start file-based routing
-├── scripts/                # Automated route & Chrome DevTools Protocol (CDP) test runners
-└── test-evidence/          # Real browser automation verification screenshots
+│   ├── hooks/              # useReducedMotion
+│   └── lib/
+│       ├── animations/     # Central GSAP registration, tokens, easing curves, cleanup
+│       └── utils.ts        # Tailwind class merge helper
+└── test-evidence/          # Browser automation verification screenshots
 ```
 
 ---
