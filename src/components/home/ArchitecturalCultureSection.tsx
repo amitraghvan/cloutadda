@@ -17,9 +17,9 @@ import { ArchitecturalScene3D } from "@/components/three/ArchitecturalScene3D";
 import { RevealText } from "@/components/animation/RevealText";
 import { cn } from "@/lib/utils";
 
-export type PillarId = "strategy" | "content" | "creators" | "culture" | "experiences";
+type PillarId = "strategy" | "content" | "creators" | "culture" | "experiences";
 
-export interface Pillar {
+interface Pillar {
   readonly id: PillarId;
   readonly number: string;
   readonly name: string;
